@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AI Data & Training Expert",
+  title: "AI 数据与训练专家",
   description:
-    "AI handles efficiency, humans handle warmth — bridging the gap between AI engineering and human empathy to drive real business growth.",
+    "AI 负责效率，人类负责温度——连接 AI 工程能力与人类温度，驱动真实业务增长。",
 };
 
 export default function RootLayout({

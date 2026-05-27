@@ -26,29 +26,29 @@ function CountUp({ target, duration = 2 }: { target: number; duration?: number }
 }
 
 const STATS = [
-  { icon: Zap, label: "Response Time", value: "< 2s", color: "#4B92A7" },
-  { icon: Users, label: "Languages", value: "8+", color: "#EACEDD" },
-  { icon: MessageSquare, label: "Query Types", value: "200+", color: "#4B92A7" },
-  { icon: ArrowUpRight, label: "NPS Boost", value: "+42", color: "#EACEDD" },
+  { icon: Zap,          label: "响应时间", value: "< 2秒",  color: "#4B92A7" },
+  { icon: Users,        label: "覆盖语言", value: "8+",     color: "#EACEDD" },
+  { icon: MessageSquare,label: "问题类型", value: "200+",   color: "#4B92A7" },
+  { icon: ArrowUpRight, label: "NPS 提升", value: "+42",    color: "#EACEDD" },
 ];
 
 const STEPS = [
   {
     step: "01",
-    title: "The Problem",
-    body: "Generic AI responses failed culturally across 8 markets, causing high abandonment and frustrated customers who felt unheard.",
+    title: "核心痛点",
+    body: "通用 AI 回复在 8 个跨境市场中无法引起文化共鸣，导致高放弃率与大量失望的客户。",
     accent: "rgba(75,146,167,0.65)",
   },
   {
     step: "02",
-    title: "The Hybrid Approach",
-    body: "A powerful RAG architecture paired with native localization translators — AI handled scale and speed, humans provided warmth and cultural nuance.",
+    title: "混合方案",
+    body: "强大的 RAG 架构与母语本地化译员协同运作——AI 负责规模与速度，人类提供温度与文化细腻度。",
     accent: "rgba(234,206,221,0.65)",
   },
   {
     step: "03",
-    title: "The Result",
-    body: "60% boost in reply rates, 42-point NPS improvement, and measurable conversion uplift across all target markets.",
+    title: "最终成果",
+    body: "回复率提升 60%，NPS 改善 42 分，在所有目标市场实现可量化的转化率大幅提升。",
     accent: "rgba(75,146,167,0.65)",
   },
 ];
@@ -66,7 +66,7 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
           "linear-gradient(150deg, #0B0517 0%, #0e0720 45%, #0B0517 100%)",
       }}
     >
-      {/* Horizontal rules */}
+      {/* 横线装饰 */}
       <div
         className="absolute top-0 left-0 w-full h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(75,146,167,0.28), transparent)" }}
@@ -76,10 +76,8 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
         style={{ background: "linear-gradient(to right, transparent, rgba(234,206,221,0.18), transparent)" }}
       />
 
-      {/* Center glow */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-      >
+      {/* 中心光晕 */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
           className="rounded-full blur-[120px]"
           style={{ width: 500, height: 500, background: "rgba(75,146,167,0.04)" }}
@@ -91,7 +89,7 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
           mobile ? "" : "max-w-screen-xl mx-auto px-16"
         }`}
       >
-        {/* Label */}
+        {/* 区块标签 */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +100,7 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
             className="text-[11px] tracking-[0.28em] uppercase font-medium"
             style={{ color: "#4B92A7" }}
           >
-            03 — Featured Project
+            03 — 标志性案例
           </span>
         </motion.div>
 
@@ -111,14 +109,14 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
             mobile ? "space-y-12" : "grid grid-cols-[1fr_1fr] gap-20 items-start"
           }`}
         >
-          {/* ── Left: Metric + Stats ── */}
+          {/* ── 左：核心数据 ── */}
           <motion.div
             initial={{ opacity: 0, x: -36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Hero metric */}
+            {/* 大数字指标 */}
             <div className="mb-8">
               <div
                 className="font-bold leading-none"
@@ -144,11 +142,11 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
                 }}
               >
                 <span style={{ fontSize: "1.3rem" }}>↑</span>
-                Reply Rate Boost
+                回复率提升
               </div>
             </div>
 
-            {/* Stat chips */}
+            {/* 数据卡片组 */}
             <div className="grid grid-cols-2 gap-3">
               {STATS.map((s, i) => (
                 <motion.div
@@ -172,7 +170,7 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
                     {s.value}
                   </div>
                   <div
-                    className="text-[10px] tracking-widest uppercase"
+                    className="text-[10px] tracking-widest"
                     style={{ color: "rgba(248,246,240,0.38)" }}
                   >
                     {s.label}
@@ -182,7 +180,7 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
             </div>
           </motion.div>
 
-          {/* ── Right: Narrative ── */}
+          {/* ── 右：案例叙述 ── */}
           <motion.div
             initial={{ opacity: 0, x: 36 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -197,11 +195,11 @@ export default function ProjectSection({ mobile = false }: { mobile?: boolean })
                 color: "#F8F6F0",
               }}
             >
-              Cross-Border E-commerce
+              跨境电商
               <br />
-              <span style={{ color: "#4B92A7" }}>AI Customer Service</span>
+              <span style={{ color: "#4B92A7" }}>AI 智能客服</span>
               <br />
-              RAG System
+              RAG 系统
             </h2>
 
             <div className="space-y-4">

@@ -206,11 +206,11 @@ export default function MorphVisual() {
       {/* Labels */}
       <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none z-10">
         <span className="text-[10px] tracking-[0.25em] uppercase font-medium" style={{ color: "rgba(75,146,167,0.7)" }}>
-          Machine
+          机械
         </span>
         <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, rgba(75,146,167,0.5), rgba(234,206,221,0.5))", width: 60 }} />
         <span className="text-[10px] tracking-[0.25em] uppercase font-medium" style={{ color: "rgba(234,206,221,0.7)" }}>
-          Human
+          人类
         </span>
       </div>
 

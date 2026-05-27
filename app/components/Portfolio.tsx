@@ -9,7 +9,7 @@ import ContactSection from "./ContactSection";
 import FloatingParticles from "./FloatingParticles";
 
 const SECTIONS = 4;
-const SECTION_LABELS = ["The Hook", "Powerhouse", "The Proof", "Connect"];
+const SECTION_LABELS = ["开场", "实力", "案例", "联系"];
 
 export default function Portfolio() {
   const containerRef = useRef<HTMLDivElement>(null);

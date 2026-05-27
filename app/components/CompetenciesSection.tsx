@@ -30,7 +30,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
           : "w-screen h-full flex flex-col justify-center"
       }`}
     >
-      {/* Vertical rule accent */}
+      {/* 竖线装饰 */}
       <div
         className="absolute top-0 left-1/3 w-px h-full pointer-events-none"
         style={{
@@ -42,7 +42,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
       <div
         className={`relative z-10 ${mobile ? "" : "max-w-screen-xl mx-auto px-16 w-full"}`}
       >
-        {/* Header */}
+        {/* 标题区 */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
             className="text-[11px] font-medium tracking-[0.28em] uppercase"
             style={{ color: "#4B92A7" }}
           >
-            02 — Competencies
+            02 — 核心能力
           </span>
           <h2
             className="mt-2 font-bold leading-tight"
@@ -67,11 +67,11 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
               backgroundClip: "text",
             }}
           >
-            The Powerhouse
+            实力矩阵
           </h2>
         </motion.div>
 
-        {/* Bento grid */}
+        {/* 便当格布局 */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
           }`}
           style={mobile ? {} : { gridTemplateRows: "230px 180px" }}
         >
-          {/* ── Card 1: Enterprise RAG ── col-span-2 */}
+          {/* ── 卡片一：企业级 RAG ── col-span-2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,13 +115,13 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                   className="text-[10px] tracking-[0.28em] uppercase font-semibold mb-3 block"
                   style={{ color: "rgba(75,146,167,0.8)" }}
                 >
-                  Structured Intelligence
+                  结构化智能
                 </span>
                 <h3
                   className="font-bold text-2xl mb-4 leading-tight"
                   style={{ fontFamily: "var(--font-display)", color: "#F8F6F0" }}
                 >
-                  Enterprise RAG &amp;<br />Prompt Engineering
+                  企业级 RAG<br />与提示词工程
                 </h3>
                 <p
                   style={{
@@ -131,13 +131,12 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                     maxWidth: 380,
                   }}
                 >
-                  Architecting retrieval-augmented systems that transform raw
-                  enterprise data into secure, precision-calibrated outputs —
-                  every prompt engineered for reliability at scale.
+                  构建检索增强系统，将企业原始数据转化为安全、精准校准的输出——
+                  每一条提示词都为规模化可靠性精心设计。
                 </p>
               </div>
 
-              {/* Hover: code micro-glitch */}
+              {/* 悬停：代码微故障动效 */}
               <AnimatePresence>
                 {hovered === 1 && (
                   <motion.div
@@ -155,33 +154,33 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                     <span style={{ color: "rgba(75,146,167,0.45)" }}>$ </span>
                     sys.load(&quot;enterprise_rag&quot;)<br />
                     <span style={{ color: "rgba(248,246,240,0.25)" }}>
-                      &gt; initializing pipeline...
+                      &gt; 正在初始化管道...
                     </span>
                     <br />
                     <span style={{ color: "#4fcf70" }}>✓</span>{" "}
-                    context_window:{" "}
+                    上下文窗口：{" "}
                     <span style={{ color: "#EACEDD" }}>128k tokens</span>
                     <br />
                     <span style={{ color: "#4fcf70" }}>✓</span>{" "}
-                    retrieval_precision:{" "}
+                    检索精度：{" "}
                     <span style={{ color: "#EACEDD" }}>94.2%</span>
                     <br />
                     <span style={{ color: "#4fcf70" }}>✓</span>{" "}
-                    security_layer:{" "}
-                    <span style={{ color: "#4B92A7" }}>ACTIVE</span>
+                    安全层：{" "}
+                    <span style={{ color: "#4B92A7" }}>已激活</span>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            {/* Corner glow */}
+            {/* 角落光晕 */}
             <div
               className="absolute bottom-0 right-0 w-40 h-40 rounded-tl-full pointer-events-none"
               style={{ background: "radial-gradient(circle at 100% 100%, rgba(75,146,167,0.12), transparent 70%)" }}
             />
           </motion.div>
 
-          {/* ── Card 2: Global Localization ── */}
+          {/* ── 卡片二：全球化本地化 ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -214,13 +213,13 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                   className="text-[10px] tracking-[0.26em] uppercase font-semibold mb-2 block"
                   style={{ color: "rgba(234,206,221,0.58)" }}
                 >
-                  Human-in-the-Loop
+                  人在回路
                 </span>
                 <h3
                   className="font-bold text-lg leading-tight"
                   style={{ fontFamily: "var(--font-display)", color: "#F8F6F0" }}
                 >
-                  Global &amp; Localization Tuning
+                  全球化与本地化调优
                 </h3>
               </div>
 
@@ -245,7 +244,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
             </div>
           </motion.div>
 
-          {/* ── Card 3: Business ROI ── */}
+          {/* ── 卡片三：商业价值驱动 ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,13 +277,13 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                   className="text-[10px] tracking-[0.26em] uppercase font-semibold mb-2 block"
                   style={{ color: "rgba(248,246,240,0.38)" }}
                 >
-                  Zero Tech-Bragging
+                  零技术炫耀
                 </span>
                 <h3
                   className="font-bold text-lg leading-tight mb-3"
                   style={{ fontFamily: "var(--font-display)", color: "#F8F6F0" }}
                 >
-                  Business &amp; ROI Driven
+                  以商业价值为导向
                 </h3>
                 <p
                   style={{
@@ -293,7 +292,7 @@ export default function CompetenciesSection({ mobile = false }: { mobile?: boole
                     lineHeight: 1.7,
                   }}
                 >
-                  Pure focus on conversion rates and measurable growth.
+                  纯粹聚焦转化率与可量化的业务增长。
                 </p>
               </div>
 

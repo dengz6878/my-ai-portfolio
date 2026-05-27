@@ -15,7 +15,7 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
           : "w-screen h-full flex items-center justify-center"
       }`}
     >
-      {/* Breathing ambient light */}
+      {/* 呼吸光晕 */}
       <motion.div
         className="absolute inset-0 pointer-events-none flex items-center justify-center"
         aria-hidden
@@ -33,7 +33,7 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
         />
       </motion.div>
 
-      {/* Subtle grid pattern */}
+      {/* 细格纹背景 */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
@@ -48,7 +48,7 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
           mobile ? "w-full" : "max-w-2xl mx-auto px-8"
         }`}
       >
-        {/* Label */}
+        {/* 区块标签 */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,11 +59,11 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
             className="text-[11px] tracking-[0.28em] uppercase font-medium"
             style={{ color: "#4B92A7" }}
           >
-            04 — Let&apos;s Connect
+            04 — 与我联系
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* 主标题 */}
         <motion.h2
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,12 +81,12 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
             backgroundClip: "text",
           }}
         >
-          Let&apos;s Build
+          一起创造
           <br />
-          Something Real.
+          真实的价值。
         </motion.h2>
 
-        {/* Subtitle */}
+        {/* 副标题 */}
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,11 +99,10 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
             lineHeight: 1.75,
           }}
         >
-          Currently open to senior AI Data, Training, or Product Specialist
-          opportunities.
+          目前开放高级 AI 数据、训练或产品专家职位机会。
         </motion.p>
 
-        {/* Email CTA */}
+        {/* 邮件按钮 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -141,7 +140,7 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
           </motion.a>
         </motion.div>
 
-        {/* Divider */}
+        {/* 分割线 */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -149,32 +148,26 @@ export default function ContactSection({ mobile = false }: { mobile?: boolean })
           transition={{ delay: 0.55 }}
           className="mt-16 flex items-center gap-4 justify-center"
         >
-          <div
-            className="w-12 h-px"
-            style={{ background: "rgba(248,246,240,0.12)" }}
-          />
+          <div className="w-12 h-px" style={{ background: "rgba(248,246,240,0.12)" }} />
           <span
             className="text-[11px] tracking-[0.18em]"
             style={{ color: "rgba(248,246,240,0.22)" }}
           >
             AI 负责效率，人类负责温度。
           </span>
-          <div
-            className="w-12 h-px"
-            style={{ background: "rgba(248,246,240,0.12)" }}
-          />
+          <div className="w-12 h-px" style={{ background: "rgba(248,246,240,0.12)" }} />
         </motion.div>
 
-        {/* Bottom micro-copy */}
+        {/* 版权 */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.7 }}
-          className="mt-6 text-[10px] tracking-[0.15em] uppercase"
+          className="mt-6 text-[10px] tracking-[0.15em]"
           style={{ color: "rgba(248,246,240,0.18)" }}
         >
-          © 2024 · All rights reserved
+          © 2024 · 保留所有权利
         </motion.p>
       </div>
     </section>
