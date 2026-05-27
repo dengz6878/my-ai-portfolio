@@ -1,184 +1,193 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, ArrowRight } from "lucide-react";
-import MorphVisual from "./MorphVisual";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import FluidVisual from "./FluidVisual";
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.14, delayChildren: 0.25 },
-  },
+  show: { opacity: 1, transition: { staggerChildren: 0.13, delayChildren: 0.2 } },
 };
-
 const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.85, ease } },
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease } },
 };
 
 export default function HeroSection({ mobile = false }: { mobile?: boolean }) {
   return (
     <section
-      className={`relative flex-shrink-0 overflow-hidden ${
+      className={`relative flex-shrink-0 bg-[#FBF9F6] overflow-hidden ${
         mobile
           ? "w-full min-h-screen flex flex-col justify-center px-6 py-28"
           : "w-screen h-full flex items-center"
       }`}
     >
-      {/* 背景光晕 */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div
-          className="absolute rounded-full blur-[120px]"
-          style={{
-            top: "10%", left: "5%",
-            width: 400, height: 400,
-            background: "radial-gradient(circle, rgba(75,146,167,0.18) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute rounded-full blur-[100px]"
-          style={{
-            bottom: "15%", right: "8%",
-            width: 320, height: 320,
-            background: "radial-gradient(circle, rgba(234,206,221,0.12) 0%, transparent 70%)",
-          }}
-        />
-      </div>
+      {/* 极淡纹理感 */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 75% 30%, rgba(196,168,130,0.12) 0%, transparent 55%), radial-gradient(circle at 20% 75%, rgba(212,180,174,0.1) 0%, transparent 50%)",
+        }}
+      />
 
       <div
         className={`relative z-10 w-full ${
           mobile
             ? ""
-            : "max-w-screen-xl mx-auto px-16 grid grid-cols-2 gap-12 h-full py-16"
+            : "max-w-screen-xl mx-auto px-16 grid grid-cols-2 gap-8 h-full py-20"
         }`}
         style={mobile ? {} : { alignItems: "stretch" }}
       >
-        {/* ── 左：文字区 ── */}
+        {/* ── 左：排版 ── */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className={mobile ? "" : "flex flex-col justify-center"}
+          className={mobile ? "" : "flex flex-col justify-center pr-8"}
         >
           {/* 身份标签 */}
-          <motion.div variants={item} className="mb-8">
+          <motion.div variants={item} className="mb-10 flex items-center gap-3">
+            <div
+              className="w-6 h-px"
+              style={{ background: "#9B7B5C" }}
+            />
             <span
-              className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.22em] px-4 py-2 rounded-full"
-              style={{
-                color: "#4B92A7",
-                border: "1px solid rgba(75,146,167,0.28)",
-                background: "rgba(75,146,167,0.06)",
-              }}
+              className="text-[11px] tracking-[0.32em] uppercase"
+              style={{ color: "#9B7B5C", fontFamily: "var(--font-body)" }}
             >
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ background: "#4B92A7" }}
-              />
               AI 数据与训练专家
             </span>
           </motion.div>
 
-          {/* 主标题 */}
-          <motion.div variants={item} className="mb-6">
+          {/* 主标题 — Playfair Display */}
+          <motion.div variants={item} className="mb-8">
             <h1
-              className="leading-[1.02] font-bold"
               style={{
-                fontFamily: "var(--font-display, Space Grotesk, sans-serif)",
-                fontSize: mobile ? "2.8rem" : "clamp(3.2rem, 5.5vw, 5.8rem)",
-                background:
-                  "linear-gradient(140deg, #F8F6F0 0%, #EACEDD 45%, #F8F6F0 85%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                fontFamily: "var(--font-display)",
+                fontSize: mobile ? "2.6rem" : "clamp(3rem, 5.2vw, 5.6rem)",
+                fontWeight: 600,
+                lineHeight: 1.08,
+                letterSpacing: "-0.01em",
+                color: "#1A1A1A",
               }}
             >
               AI 负责效率，
               <br />
-              人类负责温度。
+              <span style={{ fontStyle: "italic", color: "#9B7B5C" }}>
+                人类负责温度。
+              </span>
             </h1>
+          </motion.div>
+
+          {/* 细分割线 */}
+          <motion.div variants={item} className="mb-8">
+            <div
+              className="w-14 h-px"
+              style={{ background: "rgba(26,26,26,0.15)" }}
+            />
           </motion.div>
 
           {/* 副标题 */}
           <motion.p
             variants={item}
-            className="mb-10 max-w-[420px] leading-relaxed"
+            className="mb-12 max-w-sm"
             style={{
-              fontFamily: "var(--font-body, Inter, sans-serif)",
-              fontSize: mobile ? "1rem" : "1.1rem",
-              color: "rgba(248,246,240,0.58)",
+              fontFamily: "var(--font-body)",
+              fontSize: "1.05rem",
+              fontWeight: 300,
+              lineHeight: 1.85,
+              letterSpacing: "0.01em",
+              color: "#6B6459",
             }}
           >
-            连接 AI 效率与人类温度之间的鸿沟，以真实可量化的方式推动业务增长。
+            连接 AI 效率与人类温度之间的鸿沟，
+            以真实可量化的方式推动业务增长。
           </motion.p>
 
-          {/* 按钮组 */}
-          <motion.div variants={item} className="flex flex-wrap gap-4">
+          {/* 文字链接式 CTA */}
+          <motion.div variants={item} className="flex items-center gap-10">
             <a
               href="/cv.pdf"
               download
-              className="group flex items-center gap-3 px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.04] hover:shadow-lg"
+              className="group flex items-center gap-2"
               style={{
-                background: "linear-gradient(135deg, #4B92A7 0%, #3a7a8e 100%)",
-                color: "#F8F6F0",
-                boxShadow: "0 4px 24px rgba(75,146,167,0.25)",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.92rem",
+                letterSpacing: "0.08em",
+                color: "#1A1A1A",
+                textDecoration: "none",
               }}
             >
-              <Download size={15} />
-              下载简历
+              <span
+                className="pb-px transition-all duration-300"
+                style={{ borderBottom: "1px solid rgba(26,26,26,0.35)" }}
+              >
+                下载简历
+              </span>
+              <ArrowRight
+                size={13}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                style={{ color: "#9B7B5C" }}
+              />
             </a>
             <a
               href="mailto:1403672473@qq.com"
-              className="group flex items-center gap-3 px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.04]"
+              className="group flex items-center gap-2"
               style={{
-                border: "1px solid rgba(248,246,240,0.18)",
-                color: "#F8F6F0",
-                background: "rgba(248,246,240,0.04)",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.92rem",
+                letterSpacing: "0.08em",
+                color: "#9B7B5C",
+                textDecoration: "none",
               }}
             >
-              联系我
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+              <span
+                className="pb-px transition-all duration-300"
+                style={{ borderBottom: "1px solid rgba(155,123,92,0.4)" }}
+              >
+                联系我
+              </span>
+              <ArrowUpRight
+                size={13}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           </motion.div>
 
-          {/* 滚动提示（仅桌面） */}
+          {/* 滚动提示 */}
           {!mobile && (
-            <motion.div
-              variants={item}
-              className="mt-16 flex items-center gap-3"
-            >
+            <motion.div variants={item} className="mt-20">
               <motion.div
-                animate={{ x: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="flex items-center gap-2 text-[11px] tracking-[0.2em]"
-                style={{ color: "rgba(248,246,240,0.28)" }}
+                animate={{ x: [0, 7, 0] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                className="flex items-center gap-3"
+                style={{
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.25em",
+                  color: "rgba(26,26,26,0.28)",
+                  fontFamily: "var(--font-body)",
+                }}
               >
-                <div
-                  className="w-8 h-px"
-                  style={{ background: "rgba(248,246,240,0.2)" }}
-                />
+                <div className="w-10 h-px" style={{ background: "rgba(26,26,26,0.15)" }} />
                 滚动探索
-                <div
-                  className="w-8 h-px"
-                  style={{ background: "rgba(248,246,240,0.2)" }}
-                />
               </motion.div>
             </motion.div>
           )}
         </motion.div>
 
-        {/* ── 右：粒子视觉 ── */}
-        <div
+        {/* ── 右：流体视觉 ── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.6, delay: 0.4 }}
           className="relative"
-          style={{ height: mobile ? 300 : "100%", marginTop: mobile ? 48 : 0 }}
+          style={{ height: mobile ? 320 : "100%", marginTop: mobile ? 48 : 0 }}
         >
-          <MorphVisual />
-        </div>
+          <FluidVisual />
+        </motion.div>
       </div>
     </section>
   );

@@ -1,39 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0B0517;
-  --cream: #F8F6F0;
-  --sakura: #EACEDD;
-  --accent: #4B92A7;
+  --bg:        #FBF9F6;
+  --bg-warm:   #F5F0E8;
+  --ink:       #1A1A1A;
+  --ink-mid:   #6B6459;
+  --ink-faint: rgba(26,26,26,0.3);
+  --cognac:    #9B7B5C;
+  --blush:     #D4B4AE;
+  --teal:      #6BA3B5;
+  --border:    rgba(26,26,26,0.07);
 }
 
 html {
-  background-color: #0B0517;
+  background-color: #FBF9F6;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0B0517;
-  color: #F8F6F0;
-  overflow-x: hidden;
+  background-color: #FBF9F6;
+  color: #1A1A1A;
 }
 
-/* Hide scrollbar — horizontal portfolio uses vertical scroll as input */
-::-webkit-scrollbar {
-  display: none;
-}
-html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; -ms-overflow-style: none; }
 
-/* Selection */
 ::selection {
-  background: #4B92A7;
-  color: #F8F6F0;
+  background: #D4B4AE;
+  color: #1A1A1A;
 }
 
-/* GPU-hint for animated panels */
 .horizontal-track {
   will-change: transform;
   backface-visibility: hidden;

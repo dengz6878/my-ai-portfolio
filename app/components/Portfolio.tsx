@@ -76,7 +76,7 @@ export default function Portfolio() {
         className="fixed top-0 left-0 right-0 z-50 h-[2px] origin-left"
         style={{
           scaleX: scrollYProgress,
-          background: "linear-gradient(to right, #4B92A7, #EACEDD, #4B92A7)",
+          background: "linear-gradient(to right, #9B7B5C, #D4B4AE, #9B7B5C)",
         }}
       />
 
@@ -92,17 +92,17 @@ export default function Portfolio() {
             {/* Label tooltip on hover */}
             <span
               className="text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{ color: "rgba(248,246,240,0.5)" }}
+              style={{ color: "rgba(26,26,26,0.4)", fontFamily: "var(--font-body)" }}
             >
               {label}
             </span>
             {/* Pill indicator */}
             <div
-              className="rounded-full transition-all duration-400"
+              className="rounded-full"
               style={{
-                width: 6,
-                height: activeIdx === i ? 22 : 6,
-                background: activeIdx === i ? "#4B92A7" : "rgba(248,246,240,0.22)",
+                width: 5,
+                height: activeIdx === i ? 20 : 5,
+                background: activeIdx === i ? "#9B7B5C" : "rgba(26,26,26,0.18)",
                 transition: "height 0.35s cubic-bezier(0.16,1,0.3,1), background 0.3s ease",
               }}
             />
@@ -123,9 +123,9 @@ export default function Portfolio() {
             onClick={() => scrollToSection(i)}
             className="px-3 py-1 rounded-full text-[10px] tracking-[0.2em] uppercase transition-all duration-350"
             style={{
-              color: activeIdx === i ? "#F8F6F0" : "rgba(248,246,240,0.28)",
-              background: activeIdx === i ? "rgba(75,146,167,0.18)" : "transparent",
-              border: activeIdx === i ? "1px solid rgba(75,146,167,0.35)" : "1px solid transparent",
+              color: activeIdx === i ? "#1A1A1A" : "rgba(26,26,26,0.32)",
+              background: activeIdx === i ? "rgba(155,123,92,0.1)" : "transparent",
+              border: activeIdx === i ? "1px solid rgba(155,123,92,0.3)" : "1px solid transparent",
               transition: "all 0.35s ease",
             }}
           >
