@@ -132,7 +132,7 @@ export default function HeroSection({
 
         <div className="flex items-center gap-10">
           <a
-            href="/cv.pdf"
+            href="/resume.pdf"
             download
             className="group flex items-center gap-2"
             style={{ fontFamily: "var(--font-body)", fontSize: "0.92rem", letterSpacing: "0.08em", color: "#1A1A1A", textDecoration: "none" }}
@@ -230,7 +230,7 @@ export default function HeroSection({
             className="flex items-center gap-10"
           >
             <a
-              href="/cv.pdf"
+              href="/resume.pdf"
               download
               className="group flex items-center gap-2"
               style={{
