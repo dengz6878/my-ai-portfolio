@@ -194,11 +194,12 @@ header{
 .hero-kicker .dash{width:48px;height:1px;background:var(--ink-soft);align-self:center;}
 h1{
   font-family:var(--serif);font-weight:900;
-  font-size:clamp(2.5rem,7.4vw,5.8rem);line-height:1.24;letter-spacing:.02em;
+  font-size:clamp(2.05rem,7.4vw,5.8rem);line-height:1.24;letter-spacing:.02em;
 }
 h1 .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em;}
 h1 .char{display:inline-block;transform:translateY(115%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*.035s);will-change:transform;}
 .in h1 .char{transform:none;}
+h1 .word{display:inline-block;white-space:nowrap;}
 h1 .accent{
   background:linear-gradient(110deg,var(--rose-deep),var(--lilac-deep) 55%,var(--sage-deep));
   -webkit-background-clip:text;background-clip:text;color:transparent;
@@ -492,7 +493,7 @@ footer .sig{font-family:var(--en);font-style:italic;font-size:1.05rem;color:var(
   <div class="hero-inner" data-px="0.012">
     <p class="hero-kicker"><span class="dash"></span><em>PORTFOLIO · 2026</em></p>
     <h1 id="heroTitle">
-      <span class="line split">你好，我是 serein</span>
+      <span class="line"><span class="split">你好，我是</span><span class="split word"> serein</span></span>
       <span class="line"><span class="split">让模型</span><span class="split accent">更懂业务</span><span class="split">的人</span></span>
     </h1>
     <div class="hero-roles">
